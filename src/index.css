@@ -3,7 +3,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
-/* ── TOKENS LIGHT ── */
+/* ── PALETA DE COLORES ── */
 :root {
   --verde-1:    #81aea8;
   --verde-2:    #6A9E99;

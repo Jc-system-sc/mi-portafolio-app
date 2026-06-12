@@ -6,6 +6,8 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import Modals from './components/Modals';
+import Viax from './components/Viax/Viax'; // 👈 línea 1: importar
+
 
 export default function App() {
   const [activeModal, setActiveModal] = useState(null);
@@ -31,6 +33,8 @@ export default function App() {
       <Footer onOpenModal={setActiveModal} />
 
       <Modals active={activeModal} onClose={() => setActiveModal(null)} />
+
+      <Viax /> {/* 👈 línea 2: usar el componente */}
     </>
   );
 }

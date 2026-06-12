@@ -2,9 +2,9 @@ import React from 'react';
 
 const SKILLS = [
   { category: 'Frontend',     items: ['React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS'] },
-  { category: 'Backend',      items: ['Node.js', 'Express', 'Python', 'REST APIs', 'SQL'] },
-  { category: 'Herramientas', items: ['Git & GitHub', 'VS Code', 'Figma', 'Postman', 'Linux'] },
-  { category: 'Aprendiendo',  items: ['TypeScript', 'Next.js', 'Docker', 'MongoDB'] },
+  { category: 'Backend',      items: ['Node.js', 'Express', 'FireBase', 'REST APIs', 'SQL'] },
+  { category: 'Herramientas', items: ['Git Lab & GitHub', 'VS Code', 'Figma', 'Postman', 'Linux'] },
+  { category: 'Aprendiendo',  items: ['TypeScript', 'Next.js', 'Docker', 'Python'] },
 ];
 
 export default function Skills() {
