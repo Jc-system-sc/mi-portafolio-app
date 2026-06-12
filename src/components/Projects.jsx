@@ -3,25 +3,25 @@ import React from 'react';
 const PROJECTS = [
   {
     title: 'Sistema de Gestión Académica',
-    desc: 'Aplicación web para administrar horarios, calificaciones y asistencias universitarias.',
+    desc: 'Aplicación web para administrar horarios, calificaciones y asistencias en el colegio Simón Bolívar-Sunampe.',
     tags: ['React', 'Node.js', 'MySQL'],
     link: '#', repo: '#',
   },
   {
-    title: 'API REST de Inventario',
-    desc: 'Backend con autenticación JWT y CRUD completo para control de stock en tiempo real.',
+    title: 'Desarrollo de JARVIS-IA',
+    desc: 'API desarrollada para gestionar las funcionalidades y servicios de una inteligencia artificial.',
     tags: ['Express', 'PostgreSQL', 'JWT'],
     link: '#', repo: '#',
   },
   {
-    title: 'App de Tareas Colaborativas',
-    desc: 'SPA con tablero Kanban y sincronización en tiempo real usando WebSockets.',
+    title: 'Página Web "Entre Lineas"',
+    desc: 'Plataforma interactiva que fomenta la lectura mediante preguntas dinámicas y almacenamiento de datos en Firebase.',
     tags: ['React', 'Socket.io', 'MongoDB'],
     link: '#', repo: '#',
   },
   {
-    title: 'Dashboard de Métricas',
-    desc: 'Panel de visualización de datos con gráficos interactivos y exportación a PDF.',
+    title: 'Página Web Corporativa-GELI',
+    desc: 'Sitio web corporativo desarrollado para presentar productos, servicios e información institucional de una empresa.',
     tags: ['React', 'Chart.js', 'Python'],
     link: '#', repo: '#',
   },
