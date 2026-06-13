@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './ProjectModal.css';
+import './Projectmodal.css';
 
 const ExternalIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
