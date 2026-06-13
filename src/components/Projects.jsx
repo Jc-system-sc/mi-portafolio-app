@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ProjectModal from './ProjectModal';
+import ProjectModal from './Projectmodal';
 
 const PROJECTS = [
   {
