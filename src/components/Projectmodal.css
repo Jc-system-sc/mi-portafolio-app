@@ -1,0 +1,218 @@
+/* =============================================
+   PROJECT MODAL — Portafolio JC Saravia
+   ============================================= */
+
+/* ── Overlay ── */
+.pm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(10, 14, 20, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: pm-overlay-in 0.2s ease;
+}
+
+/* ── Modal container ── */
+.pm-modal {
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  background: #0d1117;
+  border: 1px solid rgba(90, 158, 146, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(90, 158, 146, 0.08) inset;
+  animation: pm-modal-in 0.28s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+/* ── Header ── */
+.pm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(90, 158, 146, 0.15);
+  background: rgba(90, 158, 146, 0.06);
+  flex-shrink: 0;
+}
+
+.pm-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pm-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f5f0e8;
+  letter-spacing: 0.02em;
+}
+
+.pm-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pm-tag {
+  font-size: 10px;
+  color: #7ec8b8;
+  background: rgba(90, 158, 146, 0.12);
+  border: 1px solid rgba(90, 158, 146, 0.25);
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+
+.pm-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pm-open-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #7ec8b8;
+  background: rgba(90, 158, 146, 0.12);
+  border: 1px solid rgba(90, 158, 146, 0.3);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.pm-open-btn:hover {
+  background: rgba(90, 158, 146, 0.22);
+  border-color: #5a9e92;
+  color: #f5f0e8;
+}
+
+.pm-close {
+  background: none;
+  border: none;
+  color: rgba(245, 240, 232, 0.4);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.pm-close:hover {
+  color: #f5f0e8;
+}
+
+/* ── iframe wrapper ── */
+.pm-iframe-wrapper {
+  flex: 1;
+  position: relative;
+  min-height: 480px;
+  background: #0a0e14;
+}
+
+.pm-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  min-height: 480px;
+}
+
+/* ── Placeholder (link en #) ── */
+.pm-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(245, 240, 232, 0.3);
+}
+
+.pm-placeholder-icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.3;
+}
+
+.pm-placeholder p {
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.08em;
+}
+
+/* ── Loading ── */
+.pm-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0e14;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.pm-loading.hidden {
+  opacity: 0;
+}
+
+.pm-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(90, 158, 146, 0.15);
+  border-top-color: #5a9e92;
+  border-radius: 50%;
+  animation: pm-spin 0.8s linear infinite;
+}
+
+/* ── Animaciones ── */
+@keyframes pm-overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pm-modal-in {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+@keyframes pm-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .pm-modal {
+    max-height: 95vh;
+    border-radius: 12px;
+  }
+
+  .pm-iframe-wrapper,
+  .pm-iframe {
+    min-height: 340px;
+  }
+
+  .pm-title {
+    font-size: 12px;
+  }
+}

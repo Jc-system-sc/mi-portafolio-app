@@ -1,29 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ProjectModal from './ProjectModal';
 
 const PROJECTS = [
   {
     title: 'Sistema de Gestión Académica',
     desc: 'Aplicación web para administrar horarios, calificaciones y asistencias en el colegio Simón Bolívar-Sunampe.',
     tags: ['React', 'Node.js', 'MySQL'],
-    link: '#', repo: '#',
+    link: 'https://josec36.github.io/aula-virtual-simon-bolivar/', repo: '#',
   },
   {
     title: 'Desarrollo de JARVIS-IA',
     desc: 'API desarrollada para gestionar las funcionalidades y servicios de una inteligencia artificial.',
     tags: ['Express', 'PostgreSQL', 'JWT'],
-    link: '#', repo: '#',
+    link: 'https://jarvis-ia-steel.vercel.app/', repo: '#',
   },
   {
     title: 'Página Web "Entre Lineas"',
     desc: 'Plataforma interactiva que fomenta la lectura mediante preguntas dinámicas y almacenamiento de datos en Firebase.',
     tags: ['React', 'Socket.io', 'MongoDB'],
-    link: '#', repo: '#',
+    link: 'https://entre-lineas-alpha.vercel.app/', repo: '#',
   },
   {
     title: 'Página Web Corporativa-GELI',
     desc: 'Sitio web corporativo desarrollado para presentar productos, servicios e información institucional de una empresa.',
     tags: ['React', 'Chart.js', 'Python'],
-    link: '#', repo: '#',
+    link: 'https://jc-system-pro.github.io/Geli-pagina.web/', repo: '#',
   },
 ];
 
@@ -40,6 +41,8 @@ const RepoIcon = () => (
 );
 
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <section id="proyectos" style={{ background: 'var(--white)' }}>
       <div className="container">
@@ -61,13 +64,26 @@ export default function Projects() {
                 {p.tags.map(t => <span key={t} className="project-tag">{t}</span>)}
               </div>
               <div className="project-links">
-                <a href={p.link} className="project-link"><ExternalIcon /> Demo</a>
+                <a
+                  className="project-link"
+                  onClick={(e) => { e.preventDefault(); setSelectedProject(p); }}
+                  href="#"
+                >
+                  <ExternalIcon /> Demo
+                </a>
                 <a href={p.repo} className="project-link"><RepoIcon /> Código</a>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 }

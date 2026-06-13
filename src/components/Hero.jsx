@@ -54,8 +54,8 @@ export default function Hero({ onDownloadCV }) {
 
         {/* Nombre */}
         <div>
-          <div className="hero-name-bold">JC</div>
-          <div className="hero-name-italic">Saravia</div>
+          <div className="hero-name-bold">José C.</div>
+          <div className="hero-name-italic">Saravia C.</div>
           <div className="hero-subname">Ing. de Sistemas</div>
         </div>
 
